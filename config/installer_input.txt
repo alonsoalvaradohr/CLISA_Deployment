@@ -1,0 +1,10 @@
+# ==============================================================================
+# CLISA MATLAB SILENT INSTALLATION INPUT FILE
+# MathWorks Automated Non-Interactive Deployment Configuration
+# ==============================================================================
+destinationFolder=/usr/local/MATLAB/R2024b
+agreeToLicense=yes
+mode=silent
+outputFile=/tmp/mathworks_clisa_install.log
+createSymlinks=yes
+symlinkFolder=/usr/local/bin
