@@ -5,7 +5,7 @@
 | Agente | Rol | Veredicto |
 | :--- | :--- | :--- |
 | **DELTA** | Estratega de Infraestructura | **Aprobado** - Topología GitFlow simplificada (`main`, `develop`, tags `v1.0.0`). .gitignore quirúrgico implementado. |
-| **EPSILON** | Inspector de Diffs y SecOps | **Aprobado** - Cero secretos detectados, working tree limpio, binarios externos aislados. |
+| **EPSILON** | Inspector de Diffs y SecOps | **Aprobado** - Cero secretos detectados, working tree limpio, código muerto purgado, scripts saneados con POSIX compliance. |
 | **ZETA** | Cronista / Ejecutor | **Ejecutado** - Commits atómicos semánticos y sincronización de tres líneas de vida. |
 
 ---
@@ -19,13 +19,14 @@
 | `config/` | Fase 3 / EPSILON-ZETA | `364dcbd` (main) | Reglas udev, afinado de CPU/memoria, timeshift y configs Sway/Waybar. Consenso 100%. |
 | `scripts/` | Fase 4 / EPSILON-ZETA | `49a18cb` (main) | Scripts ejecutables de fundación, thermal, power y sync. Consenso 100%. |
 | `*.md` (Auditorías) | Fase 5 / ZETA | `f62aa17` (main) | Auditoría de ejecución de comandos y aislamiento IOMMU. Consenso 100%. |
-| `README.md`, `GIT_GOVERNANCE_AUDIT.md` | Fase 6 / ZETA | `commit pendiente` (main) | Documentación viva de gobernanza y runbook para operadores. |
+| `README.md`, `GIT_GOVERNANCE_AUDIT.md` | Fase 6 / ZETA | `0bc280b` (main) | Documentación viva de gobernanza inicial y runbook para operadores. |
+| `.agents/`, `docs/`, `scripts/` refactor | Fase 20 / SWARM | Commit Fase 20 (`main`, `develop`) | Saneamiento estructural, orquestación ontológica y documentación Zero to Hero. Consenso 100%. |
 | `v1.0.0` | Fase 7 / DELTA-ZETA | `Tag v1.0.0` | Tag inmutable de producción (deployed lifeline). |
 | `develop` | Fase 8 / DELTA-ZETA | Rama `develop` | Rama de integración continua y testing (test lifeline). |
 
 ---
 
 ## 3. Estado de las Tres Líneas de Vida
-- **Stable:** Rama `main`
-- **Test:** Rama `develop`
-- **Deployed:** Tag semántico `v1.0.0`
+- **Stable:** Rama `main` (`origin/main`)
+- **Test:** Rama `develop` (`origin/develop`)
+- **Deployed:** Tag semántico `v1.0.0` (`origin/tags/v1.0.0`)
