@@ -1,0 +1,53 @@
+# ==============================================================================
+# CLISA DEPLOYMENT - SURGICAL GITIGNORE
+# Zero-Secret & Clean Workspace Governance Policy
+# ==============================================================================
+
+# Secrets and sensitive environment configurations
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.pfx
+*.p12
+*.kdbx
+*.sqlite
+*.sqlite3
+*.db
+
+# Logs and runtime artifacts
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Build, caches and temporary directories
+tmp/
+temp/
+__pycache__/
+*.py[cod]
+*$py.class
+node_modules/
+.pio/
+dist/
+build/
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+
+# OS & Editor debris
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+*~
+.directory
+
+# Standalone binary downloads
+bin/*
+!bin/.gitkeep
