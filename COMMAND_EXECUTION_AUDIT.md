@@ -1,4 +1,4 @@
-# BITÁCORA TÉCNICA DE EJECUCIÓN Y DESPLIEGUE AUTÓNOMO (CLISA FASES 11 A 19)
+# BITÁCORA TÉCNICA DE EJECUCIÓN Y DESPLIEGUE AUTÓNOMO (CLISA FASES 11 A 21)
 
 | Estado | Comando / Acción | Resultado y Justificación Técnica |
 | :--- | :--- | :--- |
@@ -66,3 +66,11 @@
 | **EXITOSO** | `mkdir -p .agents docs && cat << 'EOF' > docs/...` | Compendio documental "Zero to Hero" (`00_STATE_OF_THE_ART`, `01_SYSTEM_ARCHITECTURE`, `02_DEV_BACKLOG`, `03_AGENT_SWARM_PROTOCOLS`). |
 | **EXITOSO** | `refactor scripts/*.sh && bash -n scripts/*.sh` | Saneamiento POSIX estricto (`set -euo pipefail`), resolución dinámica de rutas y validación sintáctica de todos los scripts. |
 | **EXITOSO** | `cat << 'EOF' > README.md` | Refactorización de README.md como portal hipervinculado maestro y guía de incorporación rápida. |
+| **EXITOSO** | `flatpak update --user -y && flatpak uninstall --unused --user -y` | (Fase 21) Actualización exhaustiva y desatendida de Flatpaks (Bottles, FreeCAD, KiCad, Octave, Wine runtimes) y purga completa de huérfanos con 0 remanentes. |
+| **EXITOSO** | `pkcon update -y && pkcon install -y nobara-resolve-wizard` | (Fase 21) Actualización integral de paquetes del sistema operativo base (Nobara 44 / Fedora 44) alcanzando estado de 0 paquetes pendientes en `dnf check-update`. |
+| **EXITOSO** | `dnf clean packages` | (Fase 21) Limpieza y purga de cachés de paquetes DNF. |
+| **EXITOSO** | `pkcon install -y sway swaybg swayidle swaylock waybar alacritty wl-clipboard grim slurp mako` | (Fase 21) Aprovisionamiento de stack Wayland Tiling Window Manager y utilidades del ecosistema gráfico. |
+| **EXITOSO** | `replace_file_content .../config/sway/config` | (Fase 21) Despliegue de configuración paramétrica de Sway con reglas dinámicas de asignación de 5 espacios de trabajo, forzado de mosaico para IDEs/CLI y reglas de flotación inteligente para modales de Fusion 360 y figuras/scopes de MATLAB. |
+| **EXITOSO** | `sway -c ~/.config/sway/config -C` | (Fase 21) Certificación sintáctica del archivo de configuración del gestor de ventanas Sway con código de retorno 0 (PASS). |
+| **EXITOSO** | `matlab -batch ... && pio --version && virsh nodeinfo && lsblk` | (Fase 21) Smoke tests holísticos de integridad del ecosistema certificando operatividad del 100% de MATLAB R2024b, PlatformIO Core, Hipervisor KVM y aislamiento estricto de la unidad secundaria `/dev/nvme1n1`. |
+
