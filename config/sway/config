@@ -1,0 +1,132 @@
+# ==============================================================================
+# CLISA PARAMETRIC SWAY CONFIGURATION (DYNAMIC FLEXIBLE TOPOLOGY)
+# Target: AMD Ryzen 7 7840HS + Radeon 780M / Wayland @ 1920x1200 144Hz
+# Dynamic Workspaces // Low Cognitive Latency // Operator-Ready
+# ==============================================================================
+
+# Mod Key: Super (Windows key)
+set $mod Mod4
+set $term alacritty
+set $menu rofi -show drun -show-icons
+
+# ------------------------------------------------------------------------------
+# 1. DISPLAY & OUTPUTS (SINGLE-HEAD CONSOLIDATED TOPOLOGY)
+# ------------------------------------------------------------------------------
+output eDP-1 resolution 1920x1200@144Hz position 0 0 adaptive_sync on
+
+# Fallback Generic Rule
+output * adaptive_sync on
+
+# ------------------------------------------------------------------------------
+# 2. ERGONOMICS & INPUT PERIPHERALS (US INTL & TRACKBALL PRECISION)
+# ------------------------------------------------------------------------------
+# Keyboard: US International with Dead Keys
+input type:keyboard {
+    xkb_layout "us"
+    xkb_variant "intl"
+    xkb_options "caps:escape"
+}
+
+# Physical Trackball: Flat acceleration (0 acceleration) & Middle-button Scroll Emulation
+input type:pointer {
+    accel_profile "flat"
+    pointer_accel 0
+    scroll_method "on_button_down"
+    scroll_button 274
+}
+
+# Touchpad
+input type:touchpad {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+}
+
+# ------------------------------------------------------------------------------
+# 3. WORKSPACES & CONSOLIDATED OUTPUT BINDINGS (SINGLE-HEAD COLLAPSE)
+# ------------------------------------------------------------------------------
+set $ws1 "1: DEV"
+set $ws2 "2: CAD"
+set $ws3 "3: MANUF"
+set $ws4 "4: DOC"
+set $ws5 "5: SYS"
+
+# Workspace Physical Bindings (Consolidated on eDP-1)
+workspace $ws1 output eDP-1
+workspace $ws2 output eDP-1
+workspace $ws3 output eDP-1
+workspace $ws4 output eDP-1
+workspace $ws5 output eDP-1
+
+# ------------------------------------------------------------------------------
+# 4. AESTHETICS & WINDOW RULES (GRUVBOX HIGH CONTRAST)
+# ------------------------------------------------------------------------------
+font pango:JetBrains Mono 10
+gaps inner 6
+gaps outer 2
+default_border pixel 2
+default_floating_border pixel 2
+
+client.focused          #83a598 #458588 #ebdbb2 #83a598 #83a598
+client.focused_inactive #3c3836 #3c3836 #a89984 #3c3836 #3c3836
+client.unfocused        #1d2021 #1d2021 #928374 #1d2021 #1d2021
+client.urgent           #fb4934 #cc241d #ebdbb2 #fb4934 #fb4934
+
+# ------------------------------------------------------------------------------
+# 5. KEYBINDINGS & FAST LAUNCH
+# ------------------------------------------------------------------------------
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m "Salir de Sway?" -B "Salir" "swaymsg exit"
+
+# Fast-Launch R&D Arsenal
+bindsym $mod+F1 exec code
+bindsym $mod+F2 exec ~/.local/bin/freecad
+bindsym $mod+F3 exec ~/.local/bin/fusion360-launcher
+bindsym $mod+F4 exec ~/.local/bin/creality-print
+bindsym $mod+F5 exec texstudio
+bindsym $mod+F6 exec ~/.local/bin/clisa-jupyter
+bindsym $mod+F7 exec pulseview
+bindsym $mod+F8 exec alacritty -e picocom -b 115200 /dev/ttyACM0
+bindsym $mod+F9 exec ~/.local/bin/matlab -desktop
+
+# Navigation
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+# Window Movement & Focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+
+# Ergonomic Trackball Multi-Head Fast Transfer
+bindsym $mod+Shift+Left move workspace to output left
+bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Shift+Up move workspace to output up
+bindsym $mod+Shift+Down move workspace to output down
+bindsym $mod+Control+Left move container to output left
+bindsym $mod+Control+Right move container to output right
+bindsym $mod+Control+Up move container to output up
+bindsym $mod+Control+Down move container to output down
+
+# Status Bar
+bar {
+    swaybar_command waybar
+}

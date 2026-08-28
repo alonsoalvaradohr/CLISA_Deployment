@@ -1,0 +1,26 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["cpu", "memory", "temperature", "battery", "clock", "tray"],
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 2
+    },
+    "memory": {
+        "format": "RAM: {used:0.1f}G / {total:0.1f}G"
+    },
+    "temperature": {
+        "thermal-zone": 0,
+        "format": "{temperatureC}°C"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d %H:%M}"
+    }
+}
