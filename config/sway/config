@@ -59,7 +59,7 @@ workspace $ws4 output eDP-1
 workspace $ws5 output eDP-1
 
 # ------------------------------------------------------------------------------
-# 4. AESTHETICS & WINDOW RULES (GRUVBOX HIGH CONTRAST)
+# 4. AESTHETICS & WINDOW THEMING (GRUVBOX HIGH CONTRAST)
 # ------------------------------------------------------------------------------
 font pango:JetBrains Mono 10
 gaps inner 6
@@ -73,7 +73,86 @@ client.unfocused        #1d2021 #1d2021 #928374 #1d2021 #1d2021
 client.urgent           #fb4934 #cc241d #ebdbb2 #fb4934 #fb4934
 
 # ------------------------------------------------------------------------------
-# 5. KEYBINDINGS & FAST LAUNCH
+# 5. DYNAMIC WORKSPACE ASSIGNMENTS & TILING ERGONOMICS
+# ------------------------------------------------------------------------------
+# WS1: DEV (Terminals, IDEs, Core Shell)
+assign [app_id="(?i)alacritty"] $ws1
+assign [app_id="(?i)foot"] $ws1
+assign [app_id="(?i)code"] $ws1
+assign [class="(?i)code"] $ws1
+
+# WS2: CAD (FreeCAD, Autodesk Fusion 360, KiCad)
+assign [app_id="(?i)org.freecad.FreeCAD"] $ws2
+assign [app_id="(?i)freecad"] $ws2
+assign [class="(?i)fusion360.exe"] $ws2
+assign [app_id="(?i)org.kicad.kicad"] $ws2
+assign [app_id="(?i)kicad"] $ws2
+assign [class="(?i)kicad"] $ws2
+
+# WS3: MANUF (3D Slicers, Additive Manufacturing)
+assign [class="(?i)creality-print"] $ws3
+assign [app_id="(?i)creality-print"] $ws3
+assign [class="(?i)prusa-slicer"] $ws3
+assign [class="(?i)bambu-studio"] $ws3
+
+# WS4: DOC (Scientific Documentation, LaTeX, TeXstudio)
+assign [app_id="(?i)texstudio"] $ws4
+assign [class="(?i)texstudio"] $ws4
+assign [app_id="(?i)org.pwmt.zathura"] $ws4
+assign [app_id="(?i)org.kde.okular"] $ws4
+
+# WS5: SYS (MATLAB, Simulink, Telemetry, Signal Analysis, KVM)
+assign [class="(?i)matlab"] $ws5
+assign [instance="(?i)matlab"] $ws5
+assign [app_id="(?i)pulseview"] $ws5
+assign [class="(?i)pulseview"] $ws5
+assign [app_id="(?i)org.sigrok.PulseView"] $ws5
+assign [class="(?i)looking-glass-client"] $ws5
+assign [app_id="(?i)looking-glass-client"] $ws5
+
+# ------------------------------------------------------------------------------
+# 6. TILING ENFORCEMENT & INTELLIGENT FLOATING EXCEPTIONS (R&D PRESERVATION)
+# ------------------------------------------------------------------------------
+# Forced Tiling for Primary Workspaces
+for_window [app_id="(?i)alacritty"] floating disable
+for_window [app_id="(?i)foot"] floating disable
+for_window [class="(?i)code"] floating disable
+for_window [app_id="(?i)code"] floating disable
+for_window [app_id="(?i)texstudio"] floating disable
+for_window [app_id="(?i)org.freecad.FreeCAD"] floating disable
+
+# MATLAB Window Management: Main Desk Tiled / Figures & Scopes Floating
+for_window [class="(?i)matlab.*" title="^MATLAB.*"] floating disable
+for_window [class="(?i)matlab.*" title="^Figure.*"] floating enable
+for_window [class="(?i)matlab.*" title="(?i).*scope.*"] floating enable
+for_window [class="(?i)matlab.*" window_role="pop-up"] floating enable
+
+# Autodesk Fusion 360: Floating Modals & Preference Windows Preservation
+for_window [class="(?i)fusion360.exe" window_type="dialog"] floating enable
+for_window [class="(?i)fusion360.exe" window_type="utility"] floating enable
+for_window [class="(?i)fusion360.exe" window_type="splash"] floating enable
+for_window [class="(?i)fusion360.exe" window_type="menu"] floating enable
+for_window [class="(?i)fusion360.exe" title="(?i)open|save|export|preferences|insert|appearance|materials|service utility|command.*"] floating enable
+
+# Universal Modals, Utilities & Hardware Dialogs
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
+for_window [window_type="utility"] floating enable
+for_window [window_type="splash"] floating enable
+for_window [window_type="notification"] floating enable
+
+# Hardware & Audio Control Tools
+for_window [app_id="(?i)pavucontrol"] floating enable
+for_window [app_id="(?i)blueman-manager"] floating enable
+for_window [app_id="(?i)nm-connection-editor"] floating enable
+for_window [app_id="(?i)org.sigrok.PulseView" title="(?i)connect|device|settings"] floating enable
+
+# ------------------------------------------------------------------------------
+# 7. KEYBINDINGS & FAST LAUNCH ARSENAL
 # ------------------------------------------------------------------------------
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu

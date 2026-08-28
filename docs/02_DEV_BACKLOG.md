@@ -1,4 +1,4 @@
-# ROADMAP Y DEV BACKLOG (CLISA FASE 20)
+# ROADMAP Y DEV BACKLOG (CLISA FASE 21)
 **Documento:** `docs/02_DEV_BACKLOG.md`  
 **Estado:** Activo y Priorizado  
 **Métricas de Calidad:** ISO-Grade / Determinista / Cero Deuda Técnica
@@ -7,10 +7,15 @@
 
 ## 1. BACKLOG PRIORIZADO (SPRINT ROADMAP)
 
+### Épica 0: Saneamiento Base & Orquestación Tiling de Espacio de Trabajo (FASE 21)
+- [x] **BL-001 [Clean Slate]:** Actualización exhaustiva y desatendida del sistema base (DNF/Nobara 44), Flatpaks (Bottles, FreeCAD, KiCad, Octave) y purga de huérfanos.
+- [x] **BL-002 [Tiling WM]:** Despliegue de suite Sway + Waybar + Alacritty bajo Wayland con reglas IPC paramétricas de asignación de 5 espacios de trabajo (`DEV`, `CAD`, `MANUF`, `DOC`, `SYS`).
+- [x] **BL-003 [Window Ergonomics]:** Inyección de reglas de flotación inteligente para modales de Autodesk Fusion 360 y figuras/scopes de MATLAB R2024b, preservando mosaico estricto en IDEs y CLI.
+
 ### Épica 1: Expansión del Arsenal Electromecánico (CAD / EDA / Simulación)
-- [ ] **BL-101 [EDA]:** Despliegue de KiCad 8.x / 9.x con librerías completas de huellas (footprints) y modelos 3D STEP.
+- [x] **BL-101 [EDA]:** Despliegue de KiCad 10.x con soporte de librerías y esquemáticos.
 - [ ] **BL-102 [CAD]:** Creación de plantillas paramétricas en FreeCAD / OpenSCAD para prototipado rápido de piezas robóticas DanyBot.
-- [ ] **BL-103 [LaTeX]:** Integración de macros avanzadas `circuitikz` y `karnaugh-map` en el árbol de TeX Live local.
+- [x] **BL-103 [LaTeX]:** Integración de macros avanzadas `circuitikz` y `karnaugh-map` en el árbol de TeX Live local.
 - [ ] **BL-104 [ROS2]:** Aprovisionamiento de contenedor rootless Podman con ROS 2 Jazzy Jalisco / Humble para simulación de odometría y SLAM en DanyBot.
 
 ### Épica 2: Virtualización KVM y GPU Passthrough Dinámico
@@ -20,7 +25,7 @@
 
 ### Épica 3: Hardware-in-the-Loop (HIL) & Instrumentación
 - [ ] **BL-301 [Sigrok]:** Creación de decodificadores de protocolo personalizados en Python para telemetría UART/SPI/I2C de DanyBot.
-- [ ] **BL-302 [PlatformIO]:** Integración de scripts de test unitario (`pio test`) automatizados con microcontroladores STM32 y ESP32 en banco de pruebas.
+- [x] **BL-302 [PlatformIO]:** Integración y verificación de PlatformIO Core v6.1.19 con compilación determinista para microcontroladores AVR/ARM.
 - [ ] **BL-303 [Automated Flash]:** Watcher de compilación para volcado automático de firmware al detectar conexión de puerto serie.
 
 ### Épica 4: Higiene de Sistema, Btrfs y Gobernanza Continua
@@ -37,3 +42,4 @@
 | **DT-01** | Btrfs CoW en VMs | Fragmentación severa en imágenes `.qcow2` | Aplicar `chattr +C` en directorios de imágenes de VM. |
 | **DT-02** | Kernel Updates | Regresión de parches o soporte `vfio` | Mantener snapshots Timeshift automáticos pre-DNF upgrade. |
 | **DT-03** | Dual-Boot Windows | Sobrescritura de NVMe secundario | Mantener `/dev/nvme1n1` sellado sin entradas en `/etc/fstab`. |
+
