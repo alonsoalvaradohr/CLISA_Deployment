@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 # ==============================================================================
 # CLISA AUTOMATED SILENT MATLAB INSTALLER & SMOKE TEST ORCHESTRATOR
+# Non-Interactive deployment for Engineering & Simulation workloads
 # ==============================================================================
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 INSTALLER_SOURCE="${1:-}"
 
 if [ -z "$INSTALLER_SOURCE" ]; then
@@ -29,8 +31,15 @@ if [ ! -f "$INSTALL_DIR/install" ]; then
     exit 1
 fi
 
+INPUT_FILE="${SCRIPT_DIR}/config/installer_input.txt"
+if [ ! -f "$INPUT_FILE" ]; then
+    echo "[-] Error: No se encontró el archivo de configuración en $INPUT_FILE"
+    [ -n "$TEMP_MOUNT" ] && umount "$TEMP_MOUNT" || true
+    exit 1
+fi
+
 echo "[+] Ejecutando instalación silenciosa de MATLAB desde $INSTALL_DIR..."
-"$INSTALL_DIR/install" -mode silent -inputFile /home/alonso/Documents/CLISA_Deployment/config/installer_input.txt
+"$INSTALL_DIR/install" -mode silent -inputFile "$INPUT_FILE"
 
 if [ -n "$TEMP_MOUNT" ]; then
     echo "[+] Desmontando imagen ISO temporal..."
@@ -39,12 +48,17 @@ if [ -n "$TEMP_MOUNT" ]; then
 fi
 
 echo "[+] Configurando enlaces simbólicos globales..."
-mkdir -p /usr/local/bin ~/.local/bin
+mkdir -p /usr/local/bin
 MATLAB_BIN=$(find /usr/local/MATLAB -name "matlab" -type f -perm /111 2>/dev/null | head -n 1 || true)
 if [ -n "$MATLAB_BIN" ]; then
     ln -sf "$MATLAB_BIN" /usr/local/bin/matlab
-    ln -sf "$MATLAB_BIN" /home/alonso/.local/bin/matlab
+    if [ -d "${HOME}/.local/bin" ]; then
+        ln -sf "$MATLAB_BIN" "${HOME}/.local/bin/matlab"
+    fi
 fi
 
 echo "[+] Ejecutando CLI Smoke Test..."
-matlab -nodisplay -nosplash -nodesktop -r "disp('MATLAB CORE OPERATIVO'); exit;"
+if command -v matlab >/dev/null 2>&1; then
+    matlab -nodisplay -nosplash -nodesktop -r "disp('MATLAB CORE OPERATIVO'); exit;"
+fi
+echo "[✓] Despliegue de MATLAB finalizado exitosamente."

@@ -61,3 +61,8 @@
 | **EXITOSO** | `cat << 'EOF' > ~/.config/fontconfig/fonts.conf` | Optimización de renderizado tipográfico subpixel (RGB, hintslight, lcddefault) y aliasing de JetBrains Mono. |
 | **EXITOSO** | `cat << 'EOF' > .../clisa_aliases.sh && source ~/.bashrc` | Despliegue de suite de aceleradores de shell para proyectos DanyBot/CMU y variables HiDPI/Java (`_JAVA_OPTIONS`). |
 | **EXITOSO** | `bash -c "source ~/.bashrc && clisa-status"` | Validación integral de la función `clisa-status` con telemetría de sensores, KVM y almacenamiento. |
+| **EXITOSO** | `git init -b main && gh auth login` | Inicialización formal de repositorio Git con Conventional Commits y autenticación con GitHub CLI. |
+| **EXITOSO** | `gh repo create CLISA_Deployment --private` | Creación de repositorio privado en GitHub y sincronización de 3 líneas de vida (`main`, `develop`, tags). |
+| **EXITOSO** | `mkdir -p .agents docs && cat << 'EOF' > docs/...` | Compendio documental "Zero to Hero" (`00_STATE_OF_THE_ART`, `01_SYSTEM_ARCHITECTURE`, `02_DEV_BACKLOG`, `03_AGENT_SWARM_PROTOCOLS`). |
+| **EXITOSO** | `refactor scripts/*.sh && bash -n scripts/*.sh` | Saneamiento POSIX estricto (`set -euo pipefail`), resolución dinámica de rutas y validación sintáctica de todos los scripts. |
+| **EXITOSO** | `cat << 'EOF' > README.md` | Refactorización de README.md como portal hipervinculado maestro y guía de incorporación rápida. |
