@@ -95,6 +95,9 @@
 | **EXITOSO** | `replace_file_content ~/.config/sway/config (xkb_model pc105)` | (Fase 26) Saneamiento del bloque de hardware XKB con `xkb_model pc105`, garantizando la operatividad inmediata de la tecla física `Escape` y compatibilidad con `caps:escape`. |
 | **EXITOSO** | `replace_file_content ~/.config/sway/config (Fusion 360 Rules)` | (Fase 26) Inyección de reglas de flotación para Fusion 360 aislando galerías, navegadores, comentarios, notificaciones, menús radiales y diálogos satélite, preservando el canvas 3D en mosaico. |
 | **EXITOSO** | `cat << 'EOF' > ~/.local/bin/clisa-screenshot.sh && chmod +x ...` | (Fase 26) Despliegue de suite de capturas de pantalla (`grim` + `slurp` + `wl-copy` + `mako`) enlazada a `Print` y `Super+Shift+S` con guardado automático en `~/Pictures/Screenshots/`. |
-| **EXITOSO** | `sway -c ~/.config/sway/config -C && swaymsg reload` | (Fase 26) Certificación sintáctica integral de Sway (PASS - código 0) y recarga del Release Candidate 1 en caliente. |
+| **EXITOSO** | `replace_file_content ~/.config/sway/config (VS Code Modals & Media Keys)` | (Fase 26.1) Inyección de reglas de flotación centrada (`move position center`) para modales de confirmación/guardado de VS Code y mapeo de hardware para teclas multimedia `XF86Audio*` (wpctl) y `XF86MonBrightness*` (brightnessctl) con modificador `--locked`. |
+| **EXITOSO** | `replace_file_content ~/.local/bin/clisa-fusion-launch.sh (Pure XWayland)` | (Fase 26.1) Aislamiento estricto de Fusion 360 suprimiendo `WAYLAND_DISPLAY` y forzando `WINE_DISABLE_WAYLAND=1` junto a purga de bloqueos WebView2/Crashpad. |
+| **EXITOSO** | `clisa-fusion-launch.sh -> Telemetría T+60s (Cerbero)` | (Fase 26.1) Certificación de supervivencia empírica >60s bajo CLISA-Cerbero: `Fusion360.exe` supera la pantalla de inicialización, transiciona a `CrBrowserMain` (PID 31372) y despliega UI Chromium sin invocar `FusionServiceUtility.exe`. |
+
 
 
