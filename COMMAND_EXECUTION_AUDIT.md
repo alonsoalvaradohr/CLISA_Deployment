@@ -1,4 +1,4 @@
-# BITÁCORA TÉCNICA DE EJECUCIÓN Y DESPLIEGUE AUTÓNOMO (CLISA FASES 11 A 21)
+# BITÁCORA TÉCNICA DE EJECUCIÓN Y DESPLIEGUE AUTÓNOMO (CLISA FASES 11 A 22)
 
 | Estado | Comando / Acción | Resultado y Justificación Técnica |
 | :--- | :--- | :--- |
@@ -73,4 +73,13 @@
 | **EXITOSO** | `replace_file_content .../config/sway/config` | (Fase 21) Despliegue de configuración paramétrica de Sway con reglas dinámicas de asignación de 5 espacios de trabajo, forzado de mosaico para IDEs/CLI y reglas de flotación inteligente para modales de Fusion 360 y figuras/scopes de MATLAB. |
 | **EXITOSO** | `sway -c ~/.config/sway/config -C` | (Fase 21) Certificación sintáctica del archivo de configuración del gestor de ventanas Sway con código de retorno 0 (PASS). |
 | **EXITOSO** | `matlab -batch ... && pio --version && virsh nodeinfo && lsblk` | (Fase 21) Smoke tests holísticos de integridad del ecosistema certificando operatividad del 100% de MATLAB R2024b, PlatformIO Core, Hipervisor KVM y aislamiento estricto de la unidad secundaria `/dev/nvme1n1`. |
+| **EXITOSO** | `cat << 'EOF' > .agents/cerbero.md` | (Fase 22) Instanciación de CLISA-Cerbero como agente fiscalizador de auditoría empírica y forense para represión de alucinaciones y certificación de procesos vivos. |
+| **EXITOSO** | `grep -h -E "Reason|StackTraces" ~/.config/mozilla/.../pending/*.extra` | (Fase 22) Diagnóstico forense de causa raíz del crash de Firefox: colapso por `SIGSEGV / SEGV_MAPERR` en `libwayland-client.so.0` / `libxul.so` provocado por exportación forzada de `MOZ_ENABLE_WAYLAND=1` y bucle de restauración de sesión corrupta. |
+| **EXITOSO** | `replace_file_content ~/.config/environment.d/10-clisa-env.conf && systemctl --user unset-environment MOZ_ENABLE_WAYLAND` | (Fase 22) Saneamiento del entorno gráfico eliminando la variable redundante `MOZ_ENABLE_WAYLAND=1` y permitiendo la autodetección nativa de Wayland en Firefox. |
+| **EXITOSO** | `rm -rf ~/.config/mozilla/firefox/.../{minidumps,sessionstore*,startupCache,lock}` | (Fase 22) Purga quirúrgica de bloqueos, minidumps y estados de sesión colapsados en el perfil de usuario preservando bookmarks (`places.sqlite`) y credenciales (`key4.db`). |
+| **EXITOSO** | `firefox & -> PID monitoring T+20s` | (Fase 22) Verificación empírica fiscalizada por Cerbero: proceso vivo de Firefox supervisado durante >20s sin colapso, con subprocesos de contenido inicializados y 0 instancias de `crashreporter`. |
+| **EXITOSO** | `busctl call org.freedesktop.Accounts /org/freedesktop/Accounts/User1000 ... SetSession s "sway" && SetSessionType s "wayland"` | (Fase 22) Configuración de sesión por defecto de usuario hacia `sway` en el daemon AccountsService para el gestor de pantalla. |
+| **EXITOSO** | `cat << 'EOF' > ~/.dmrc && cat << 'EOF' > config/sddm.conf.d/autologin.conf` | (Fase 22) Despliegue de directivas de inicio de sesión desatendido en `~/.dmrc` y almacenamiento de la configuración declarativa SDDM/Plasmalogin en el repositorio. |
+| **EXITOSO** | `cat << 'EOF' > ~/.config/mako/config && makoctl reload && notify-send ...` | (Fase 22) Provisión del archivo de configuración del demonio de notificaciones `mako` con `default-timeout=4000` y certificación empírica de auto-descarte tras 4 segundos. |
+
 

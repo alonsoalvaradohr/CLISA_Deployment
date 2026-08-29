@@ -17,7 +17,8 @@ graph TD
         Zeta["Agente ZETA (Cronista / Ejecutor Git)"]
     end
 
-    subgraph "Agentes de Dominio Operacional"
+    subgraph "Agentes de Dominio Operacional & Fiscalización"
+        Cerbero["CLISA-Cerbero (Auditor Forense / Perro de Traba)"]
         Onto["Agente Ontólogo (Docs / Zero-to-Hero)"]
         Archi["Agente Arquitecto (Topología & Mermaid)"]
         Surg["Agente Cirujano (Refactor POSIX & Idempotencia)"]
@@ -25,6 +26,7 @@ graph TD
         IOMMU["CLISA-IOMMU (GPU & KVM)"]
     end
 
+    Core --> Cerbero
     Core --> Delta
     Core --> Epsilon
     Core --> Zeta
@@ -42,6 +44,7 @@ graph TD
 | Agente | Nivel de Permisos | Función Primaria | Criterio de Éxito |
 | :--- | :--- | :--- | :--- |
 | **CLISA-Core** | Nivel 10 (Global) | Orquestación general, resolución de dependencias y balanceo de carga. | Mantiene la regla 90/5/5 y reduce la entropía a cero. |
+| **CLISA-Cerbero** | Veto Empírico / Forense | Auditoría implacable de estado vivo, represión de alucinaciones y certificación de procesos. | Cero alucinaciones; 100% de hitos certificados con evidencia en vivo (PIDs, sockets, D-Bus). |
 | **DELTA** | Lectura / Análisis | Define `.gitignore`, estrategia de ramas y tags semánticos. | Cero ambigüedad en la topología de control de versiones. |
 | **EPSILON** | Veto Absoluto | Inspección de diffs, detección de secretos, credenciales o binarios no deseados. | 100% de sanidad pre-push; cero fugas de datos. |
 | **ZETA** | Escritura Git | Ejecución de commits atómicos, ramas y sincronización GitHub. | Repositorio remoto sincronizado con código de salida 0. |
