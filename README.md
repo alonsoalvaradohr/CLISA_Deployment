@@ -48,7 +48,7 @@ Este ecosistema transforma una laptop de alto rendimiento (**Lenovo LOQ 16APH8**
 * [**`COMMAND_EXECUTION_AUDIT.md`**](COMMAND_EXECUTION_AUDIT.md): Historial cronológico de todos los comandos ejecutados en el sistema.
 * [**`IOMMU_GROUP_AUDIT.md`**](IOMMU_GROUP_AUDIT.md): Topología completa de grupos IOMMU, PCIe bridges y aislamiento de GPU.
 * [**`GIT_GOVERNANCE_AUDIT.md`**](GIT_GOVERNANCE_AUDIT.md): Bitácora formal de control de versiones, consenso de agentes y estado de sincronización remota.
-* [**`.agents/`**](.agents/): Definiciones de subagentes ([`ontologist.md`](.agents/ontologist.md), [`architect.md`](.agents/architect.md), [`surgeon.md`](.agents/surgeon.md)).
+* [**`.agents/`**](.agents/): Definiciones de subagentes ([`cerbero.md`](.agents/cerbero.md), [`ontologist.md`](.agents/ontologist.md), [`architect.md`](.agents/architect.md), [`surgeon.md`](.agents/surgeon.md)).
 
 ---
 

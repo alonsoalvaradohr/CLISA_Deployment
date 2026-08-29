@@ -1,0 +1,39 @@
+# CLISA Mako Notification Daemon Configuration
+# Industrial-Grade Non-Intrusive Popups
+
+# Behavior & Auto-dismiss timeout (in milliseconds)
+default-timeout=4000
+ignore-timeout=0
+max-visible=5
+sort=-time
+
+# Geometry & Layout
+width=360
+height=120
+margin=16
+padding=12
+border-size=2
+border-radius=8
+
+# Ergonomics & Typography
+font=JetBrains Mono 10
+format=<b>%s</b>\n%b
+
+# Industrial Dark Theme
+background-color=#1a1b26ea
+text-color=#c0caf5
+border-color=#7aa2f7
+progress-color=over #414868
+
+# Severity criteria
+[urgency=low]
+border-color=#414868
+default-timeout=3000
+
+[urgency=normal]
+border-color=#7aa2f7
+default-timeout=4000
+
+[urgency=critical]
+border-color=#f7768e
+default-timeout=8000
