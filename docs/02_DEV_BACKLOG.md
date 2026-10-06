@@ -1,4 +1,4 @@
-# ROADMAP Y DEV BACKLOG (CLISA FASE 22)
+# ROADMAP Y DEV BACKLOG (CLISA FASE 27)
 **Documento:** `docs/02_DEV_BACKLOG.md`  
 **Estado:** Activo y Priorizado (Fiscalización Empírica Cerbero)  
 **Métricas de Calidad:** ISO-Grade / Determinista / Cero Deuda Técnica / Cero Alucinaciones
@@ -7,7 +7,7 @@
 
 ## 1. BACKLOG PRIORIZADO (SPRINT ROADMAP)
 
-### Épica 0: Saneamiento Base, Recuperación Web y Orquestación Gráfica (FASE 21 - 22)
+### Épica 0: Saneamiento Base, Recuperación Web, Orquestación Gráfica y Prioridad de Boot (FASE 21 - 27)
 - [x] **BL-001 [Clean Slate]:** Actualización exhaustiva y desatendida del sistema base (DNF/Nobara 44), Flatpaks (Bottles, FreeCAD, KiCad, Octave) y purga de huérfanos.
 - [x] **BL-002 [Tiling WM]:** Despliegue de suite Sway + Waybar + Alacritty bajo Wayland con reglas IPC paramétricas de asignación de 5 espacios de trabajo (`DEV`, `CAD`, `MANUF`, `DOC`, `SYS`).
 - [x] **BL-003 [Window Ergonomics]:** Inyección de reglas de flotación inteligente para modales de Autodesk Fusion 360 y figuras/scopes de MATLAB R2024b, preservando mosaico estricto en IDEs y CLI.
@@ -15,6 +15,7 @@
 - [x] **BL-005 [P0 - Display Manager Autologin]:** Configuración de sesión por defecto desatendida (`sway`) en AccountsService D-Bus, `~/.dmrc` y archivo declarativo `config/sddm.conf.d/autologin.conf`.
 - [x] **BL-006 [P0 - Notification Ergonomics]:** Despliegue de configuración `mako` con auto-descarte estricto (`default-timeout=4000` ms) y recarga de demonio en memoria (`makoctl reload`).
 - [x] **BL-007 [P0 - Cerbero Auditor]:** Instanciación de `.agents/cerbero.md` como perro de traba para fiscalización forense obligatoria.
+- [x] **BL-008 [P0 - GRUB2 Default Boot Windows]:** Reconfiguración determinista del orden de arranque en GRUB2 (`saved_entry='Windows Boot Manager (on /dev/nvme1n1p5)'`), confirmación de `GRUB_DEFAULT=saved` y blindaje absoluto del disco secundario `/dev/nvme1n1`.
 
 ### Épica 1: Expansión del Arsenal Electromecánico (CAD / EDA / Simulación)
 - [x] **BL-101 [EDA]:** Despliegue de KiCad 10.x con soporte de librerías y esquemáticos.

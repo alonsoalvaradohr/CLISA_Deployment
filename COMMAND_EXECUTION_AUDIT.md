@@ -1,4 +1,4 @@
-# BITÁCORA TÉCNICA DE EJECUCIÓN Y DESPLIEGUE AUTÓNOMO (CLISA FASES 11 A 22)
+# BITÁCORA TÉCNICA DE EJECUCIÓN Y DESPLIEGUE AUTÓNOMO (CLISA FASES 11 A 27)
 
 | Estado | Comando / Acción | Resultado y Justificación Técnica |
 | :--- | :--- | :--- |
@@ -94,6 +94,12 @@
 | **EXITOSO** | `replace_file_content ~/.config/sway/config (Media Keys Locked)` | (Fase 26.2) Mapeo directo de hardware para `XF86AudioRaiseVolume`, `LowerVolume`, `Mute`, `MicMute` y brillo de pantalla enlazados con `--locked` a `wpctl` y `brightnessctl`. |
 | **EXITOSO** | `replace_file_content bottle.yml && replace_file_content clisa-fusion-launch.sh` | (Fase 26.2) Aislamiento estricto XWayland suprimiendo `WAYLAND_DISPLAY` en `Inherited_Environment_Variables` de Bottles e inyectando `WEBVIEW2_ADDITIONAL_BROWSER_ARGUMENTS="--disable-gpu --disable-gpu-compositing --no-sandbox --disable-software-rasterizer"`. |
 | **EXITOSO** | `clisa-fusion-launch.sh -> Telemetría DDA en Vivo (Cerbero)` | (Fase 26.2) Certificación cristalográfica por árbol IPC (`swaymsg -t get_tree` / `wmctrl -l`): Transición demostrada de `Initializing - Autodesk Fusion` -> `Loading additional modules` -> `Autodesk Fusion` -> `Home - Autodesk Fusion (Education License)` en WS3: CAD activa y renderizando a T+40s sin invocar Service Utility. |
+| **EXITOSO** | `sudo grep -i "^menuentry 'Windows" /boot/grub2/grub.cfg` | (Fase 27) Scout forense de entrada de Windows Boot Manager; localizada la cadena exacta `Windows Boot Manager (on /dev/nvme1n1p5)` sin alteración de NVRAM ni índices numéricos. |
+| **EXITOSO** | `grep "^GRUB_DEFAULT" /etc/default/grub` | (Fase 27) Verificación de directiva `GRUB_DEFAULT='saved'` en `/etc/default/grub` garantizando persistencia declarativa a prueba de upgrades de kernel. |
+| **EXITOSO** | `sudo grub2-set-default "Windows Boot Manager (on /dev/nvme1n1p5)"` | (Fase 27) Inyección determinista de la entrada de arranque por defecto en `/boot/grub2/grubenv`. |
+| **EXITOSO** | `sudo grub2-editenv list` | (Fase 27) Validación empírica por Cerbero: confirmada variable `saved_entry=Windows Boot Manager (on /dev/nvme1n1p5)` activa en el entorno de GRUB. |
+| **EXITOSO** | `lsblk -o NAME,SIZE,FSTYPE,MOUNTPOINTS` | (Fase 27) Certificación de aislamiento estricto e inviolabilidad física de la unidad `/dev/nvme1n1` (disco Windows secundario con cero puntos de montaje). |
+
 
 
 
