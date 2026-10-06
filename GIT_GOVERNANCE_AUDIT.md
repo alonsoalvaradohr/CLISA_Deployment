@@ -22,6 +22,7 @@
 | `README.md`, `GIT_GOVERNANCE_AUDIT.md` | Fase 6 / ZETA | `0bc280b` (main) | Documentación viva de gobernanza inicial y runbook para operadores. |
 | `.agents/`, `docs/`, `scripts/` refactor | Fase 20 / SWARM | Commit Fase 20 (`main`, `develop`) | Saneamiento estructural, orquestación ontológica y documentación Zero to Hero. Consenso 100%. |
 | `.agents/cerbero.md`, `config/mako/`, `config/sddm.conf.d/` | Fase 22 / CERBERO | Commit Fase 22 (`main`, `develop`) | Reingeniería estructural, represión de alucinaciones, recuperación empírica de Firefox, autologin tiling y timeout de Mako. Consenso 100%. |
+| `/boot/grub2/grubenv`, `02_DEV_BACKLOG.md` | Fase 27 / SCOUT-CERBERO | Commit Fase 27 (`main`, `develop`) | Prioridad de arranque seguro en Windows Boot Manager (`grub2-set-default`), blindaje y aislamiento estricto de NVMe secundario `/dev/nvme1n1`. Consenso 100%. |
 | `v1.0.0` | Fase 7 / DELTA-ZETA | `Tag v1.0.0` | Tag inmutable de producción (deployed lifeline). |
 | `develop` | Fase 8 / DELTA-ZETA | Rama `develop` | Rama de integración continua y testing (test lifeline). |
 
