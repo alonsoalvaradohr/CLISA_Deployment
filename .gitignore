@@ -1,6 +1,6 @@
 # ==============================================================================
 # CLISA DEPLOYMENT - SURGICAL GITIGNORE
-# Zero-Secret & Clean Workspace Governance Policy
+# Zero-Secret & Clean Workspace Governance Policy (Linux / Bash / Sway / Hardware)
 # ==============================================================================
 
 # Secrets and sensitive environment configurations
@@ -17,6 +17,14 @@
 *.sqlite3
 *.db
 
+# Credentials & SSH / Hardware tokens
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.token
+*.secret
+
 # Logs and runtime artifacts
 *.log
 logs/
@@ -24,9 +32,22 @@ logs/
 *.seed
 *.pid.lock
 
-# Build, caches and temporary directories
+# Shell history & environment traces
+*.history
+.bash_history
+.zsh_history
+
+# Temporary and backup files
 tmp/
 temp/
+*.bak
+*.tmp
+*.swp
+*.swo
+*~
+.#*
+
+# Build, caches and temporary directories
 __pycache__/
 *.py[cod]
 *$py.class
@@ -44,8 +65,9 @@ build/
 .DS_Store
 Thumbs.db
 .idea/
-*.swp
-*~
+.vscode/
+*.sublime-project
+*.sublime-workspace
 .directory
 
 # Standalone binary downloads
