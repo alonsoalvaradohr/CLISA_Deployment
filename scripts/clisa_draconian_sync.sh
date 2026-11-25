@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2024-2026 Alonso Alvarado Hernández <alonsoalvaradohr>
 # ==============================================================================
 # CLISA DRACONIAN PURGE & SYSTEM DISTRO-SYNC
 # Target: Nobara Linux Base Hygiene, Cache Purge and Flatpak Alignment

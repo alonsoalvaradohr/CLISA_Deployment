@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2024-2026 Alonso Alvarado Hernández <alonsoalvaradohr>
 # ==============================================================================
 # CLISA-AGENT: BLINDAJE BTRFS, EXPANSION R&D Y OPTIMIZACION DE ENTORNO
 # Target: Nobara Linux 44 // AMD 7840HS + RTX 4060 Mobile (Lenovo LOQ)

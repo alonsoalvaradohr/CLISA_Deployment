@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2024-2026 Alonso Alvarado Hernández <alonsoalvaradohr>
 # ==============================================================================
 # CLISA OPERATOR ALIASES & SHELL ACCELERATORS (ZERO COGNITIVE LATENCY)
 # ==============================================================================

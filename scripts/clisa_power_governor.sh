@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2024-2026 Alonso Alvarado Hernández <alonsoalvaradohr>
 # ==============================================================================
 # CLISA DYNAMIC POWER GOVERNOR (USB-C PD 140W vs HIGH POWER AC SUPPLY)
 # Target: AMD Ryzen 7 7840HS / Lenovo LOQ 16

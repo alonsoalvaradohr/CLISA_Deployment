@@ -1,0 +1,29 @@
+name: Feature Request
+description: Propose a new hardware profile, governor capability, or deployment module for CLISA.
+title: "[FEAT]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for suggesting an enhancement to the CLISA Deployment Suite.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement / Context
+      description: Is your feature request related to a hardware architecture limitation or infrastructure optimization?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: A clear description of the proposed module, configuration, or architectural improvement.
+    validations:
+      required: true
+  - type: textarea
+    id: hardware_considerations
+    attributes:
+      label: Hardware Profile Considerations
+      description: Detail target hardware architectures (e.g., AMD Zen 4, Intel 13th/14th Gen, VFIO passthrough quirks).
+    validations:
+      required: false

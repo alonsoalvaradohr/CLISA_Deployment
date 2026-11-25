@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use CLISA Deployment & Intelligent Infrastructure Suite in your research, infrastructure, or operational deployment, please cite it as below."
+title: "CLISA Deployment & Intelligent Infrastructure Suite"
+version: "1.0.0"
+date-released: "2026-11-25"
+license: "Apache-2.0"
+repository-code: "https://github.com/alonsoalvaradohr/CLISA_Deployment"
+authors:
+  - family-names: "Alvarado Hernández"
+    given-names: "Alonso"
+    alias: "alonsoalvaradohr"
+abstract: "CLISA Deployment & Intelligent Infrastructure Suite is an automated, deterministic orchestration and hardware acceleration framework for Linux systems (Wayland/Sway, Btrfs subvolumes, IOMMU GPU passthrough, and intelligent power/thermal governance)."
+keywords:
+  - "linux deployment"
+  - "sway"
+  - "wayland"
+  - "btrfs"
+  - "iommu"
+  - "hardware governance"
+  - "automation"

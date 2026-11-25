@@ -1,0 +1,40 @@
+name: Bug Report
+description: Report a deployment error, governor failure, or script regression in CLISA.
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for reporting an issue in CLISA Deployment Suite. Please fill out the sections below.
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of the failure or unexpected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Commands executed, environment flags, or reproduction steps.
+      placeholder: |
+        1. Run 'scripts/clisa_power_governor.sh' ...
+        2. Observe error log ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should have occurred under expected system conditions.
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware & Kernel Environment
+      description: Distribution, kernel version, CPU/GPU model (DO NOT include personal UUIDs or serial numbers).
+      placeholder: e.g., Nobara 44 / Linux 6.12 / AMD Ryzen 7 7840HS / NVIDIA RTX 4060 Mobile
+    validations:
+      required: false

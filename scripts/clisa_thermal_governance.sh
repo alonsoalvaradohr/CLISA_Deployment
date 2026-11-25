@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2024-2026 Alonso Alvarado Hernández <alonsoalvaradohr>
 # ==============================================================================
 # CLISA THERMAL & POWER GOVERNANCE ORCHESTRATOR
 # Target: AMD Ryzen 7 7840HS (Zen 4 Phoenix) / Lenovo LOQ 16APH8

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+# Copyright (C) 2024-2026 Alonso Alvarado Hernández <alonsoalvaradohr>
 # ==============================================================================
 # CLISA AUTOMATED SILENT MATLAB INSTALLER & SMOKE TEST ORCHESTRATOR
 # Non-Interactive deployment for Engineering & Simulation workloads
